@@ -1,9 +1,25 @@
 package pack1;
 
 public class ArrayDemo {
+	
+	int num = 10;
+	int num2;
+	
+	
+	ArrayDemo()
+	{
+		num2 = 20;
+	}
+	
 
 	public static void main(String[] args) 
 	{
+		
+		ArrayDemo ar = new ArrayDemo();
+		
+		ArrayDemo ar2 = new ArrayDemo();
+		
+		ArrayDemo ar3 = new ArrayDemo();
 
 		int num = 50;
 		
