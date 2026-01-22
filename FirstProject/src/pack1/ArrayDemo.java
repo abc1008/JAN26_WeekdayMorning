@@ -6,6 +6,8 @@ public class ArrayDemo {
 	{
 
 		int num = 50;
+		
+		System.out.println("Git Test");
 
 		String s1 = "abc"; // 'Mon', "Tue" ..
 
