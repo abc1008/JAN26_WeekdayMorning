@@ -5,6 +5,12 @@ public class Parent
 	int num = 20;
 	static int num2 = 50;
 	
+	
+	public Parent()
+	{
+		System.out.println("Parent Constructor");
+	}
+	
 	public void m1()
 	{
 		System.out.println("m1 of Class_1");

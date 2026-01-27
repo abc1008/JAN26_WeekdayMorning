@@ -2,6 +2,12 @@ package ineritance;
 
 public class Child extends Parent
 {
+	public Child(int num)
+	{
+		System.out.println("1 arg - Child Constructor");
+	}
+	
+	
 	
 	public void m3()
 	{
@@ -16,8 +22,8 @@ public class Child extends Parent
 		c1.m1();
 		
 		
-		Child c2 = new Child();
-		c2.m1();
+//		Child c2 = new Child();
+//		c2.m1();
 		
 		
 		Child.m2();

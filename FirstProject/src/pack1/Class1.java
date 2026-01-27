@@ -1,6 +1,9 @@
 package pack1;
 
-public class Class1 {
+import access_modifiers.TestClass_1;
+
+public class Class1
+{
 
 //	explain logic i a few words
 	public static void main(String[] args) // method
@@ -45,6 +48,12 @@ public class Class1 {
 
 		String data5 = "1. boolean Data Type · 2. byte Data Type · 3. short Data Type · 4. int Data Type · 5. long Data Type · 6. float Data Type";
 
+		
+		
+//		TestClass_1 t1 = new TestClass_1();
+//		t1.m1();
+		
+//		System.out.println(TestClass_1.num);
 	
 	}
 
