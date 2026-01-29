@@ -10,7 +10,7 @@ public class Child extends Parent
 		return 8;
 	}
 	
-	public void m2(int n)
+	protected void m2(int n)
 	{
 		System.out.println("Child - int - m2");
 	}
@@ -18,6 +18,11 @@ public class Child extends Parent
 	public void m3(int num)
 	{
 		System.out.println("Child - int - m3");
+	}
+	
+	public static void m4()
+	{
+		System.out.println("Child - m4");
 	}
 	
 	public static void main(String[] args)
@@ -50,6 +55,7 @@ public class Child extends Parent
 		p2.m2(0);   // overridden  - Object deciding
 		p2.m3('f'); // overloaded  - ref variable deciding
 		
+		p2.m4();   // method hiding  - ref variable deciding
 		
 		System.out.println();
 		System.out.println("*** Child Ref + Parent Object ****");
