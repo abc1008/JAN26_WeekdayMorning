@@ -36,8 +36,6 @@ public class Class_C extends Class_B
 		
 		
 		
-		
-		
 		System.out.println();
 		System.out.println("**** Parent Ref + Child Object *****");
 		System.out.println();

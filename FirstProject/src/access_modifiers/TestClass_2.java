@@ -1,5 +1,6 @@
 package access_modifiers;
 
+import interface_demo.Int_1;
 
 public class TestClass_2
 {
@@ -12,6 +13,8 @@ public class TestClass_2
 		System.out.println(TestClass_1.num);
 		
 		System.out.println(t1.num2);
+		
+		System.out.println(Int_1.num);
 	}
 
 }

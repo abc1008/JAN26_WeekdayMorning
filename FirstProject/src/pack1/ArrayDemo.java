@@ -17,6 +17,8 @@ public class ArrayDemo {
 		
 		ArrayDemo ar = new ArrayDemo();
 		
+
+		
 		ArrayDemo ar2 = new ArrayDemo();
 		
 		ArrayDemo ar3 = new ArrayDemo();

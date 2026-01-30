@@ -17,12 +17,11 @@ public abstract class Class_A
 
 	public abstract void m1(); // abstract method or incomplete method
 
-	public abstract void m3(
-			int a
-	);
+	public abstract void m3(int a);
 
 	public abstract void m4();
 
+	
 	public void m2() // concrete method or complete method
 	{
 		System.out.println("m2");
