@@ -1,6 +1,7 @@
 package collections_demo;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,11 +20,13 @@ public class ListDemo
 		List<Integer> list1 = new ArrayList<>();   // create an empty list
 		System.out.println(list1);
 		
-		list1.add(100);
+		list1.add(100);  // insert data
 		list1.add(200);
 		list1.add(300);
 		list1.add(400);
 		list1.add(500);
+		list1.add(300);
+		list1.add(400);
 		
 		System.out.println(list1);
 		
@@ -34,7 +37,7 @@ public class ListDemo
 		System.out.println("data : " +data);
 		
 		
-		Integer removedData = list1.remove(2);
+		Integer removedData = list1.remove(2);  // remove
 		System.out.println("removedData : "+removedData);
 		
 		System.out.println(list1);
@@ -72,7 +75,6 @@ public class ListDemo
 		
 		Iterator<Integer> itr = list1.iterator();
 		
-		
 		while(itr.hasNext())
 		{
 			Integer data1 = itr.next();
@@ -80,8 +82,26 @@ public class ListDemo
 		}
 		
 		
+//		Conversion
 		
+		HashSet<Integer> set1 = new HashSet<>();
+		System.out.println(set1);
 		
+//		Insert
+		set1.add(10);
+		set1.add(20);
+		set1.add(30);
+		set1.add(40);
+		set1.add(50);
+		set1.add(30);
+		set1.add(40);
+		set1.add(60);
+
+		List<Integer> list3 = new ArrayList<>(set1);  
+		
+		System.out.println("list3 : "+list3);
+		
+		System.out.println(list3.get(3));
 		
 	}
 
