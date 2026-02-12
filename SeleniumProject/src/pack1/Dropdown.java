@@ -59,6 +59,9 @@ public class Dropdown
 		Thread.sleep(2000);
 		sel.selectByVisibleText("Nov");
 		
+		
+		sel.getFirstSelectedOption();  // to return selected value
+		
 
 	}
 
