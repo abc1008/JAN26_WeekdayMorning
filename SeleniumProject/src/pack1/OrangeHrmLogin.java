@@ -2,6 +2,7 @@ package pack1;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -21,23 +22,32 @@ public class OrangeHrmLogin
 	{
 		
 		WebDriver driver = new ChromeDriver();
-		
 		driver.manage().window().maximize(); 
+		
+		
+//													Max Waiting Time
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		
-		Thread.sleep(6000);
+//		Thread.sleep(6000);
 		
 		WebElement textBoxUserId = driver.findElement(By.xpath("//input[@name='username']"));
 		textBoxUserId.sendKeys("Admin");
 		
 		
-		Thread.sleep(3000);
+//		Thread.sleep(3000);
 		
 //		locate webelement with given locator and store it within a variable
 		
 		WebElement textBoxPassword = driver.findElement(By.xpath("//input[@name='password']"));
 		
 		textBoxPassword.sendKeys("admin123");
+		
+		
+		
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		
 		
 		
 //		driver.findElement(By.partialLinkText(", Inc")).click();
