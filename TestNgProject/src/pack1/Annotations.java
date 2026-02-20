@@ -9,19 +9,19 @@ import org.testng.annotations.Test;
 public class Annotations
 {
 	
-	@Test(priority = 1)
+	@Test(priority = 1, groups = "sanity")
 	public void testCase1()
 	{
 		System.out.println("testCase1");
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 2,groups = "regression")
 	public void testCase2()
 	{
 		System.out.println("testCase2");
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 3, groups = "regression")
 	public void testCase3()
 	{
 		System.out.println("testCase3");
