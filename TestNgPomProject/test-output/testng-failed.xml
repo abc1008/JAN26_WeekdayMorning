@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pack1.ListenerTest">
+      <class name="testSuite.LoginTestSuite">
         <methods>
-          <include name="testCase1"/>
+          <include name="closeBrowser"/>
+          <include name="initializeDriver"/>
+          <include name="tc_123_LoginTest"/>
         </methods>
-      </class> <!-- pack1.ListenerTest -->
+      </class> <!-- testSuite.LoginTestSuite -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
