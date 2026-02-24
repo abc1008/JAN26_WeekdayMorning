@@ -1,12 +1,14 @@
 package testScripts;
 
-import pageClasses.LoginPage;
-import testSuite.LoginTestSuite;
+import java.io.IOException;
 
-public class LoginTestScript extends LoginTestSuite
+import basePack.BaseClass;
+import pageClasses.LoginPage;
+
+public class LoginTestScript extends BaseClass
 {
 	
-	public void performLogin()
+	public void performLogin() throws IOException
 	{
 //		Call method from page class
 		
