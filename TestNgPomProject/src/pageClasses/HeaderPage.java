@@ -55,28 +55,32 @@ public class HeaderPage
 	
 	
 //	public methods
-	public void changePassword()
+	public boolean changePassword()
 	{
+		boolean result = false;
 		try
 		{
 			dropdownProfileIcon.click();
 			optionChangePassword.click();
+			ExplicitWait.waitUntilElementVisibileByXpath(driver, textBoxEnterPasswordXpath);
 			textBoxEnterPassword.sendKeys("abcd@1234");
 			textBoxConfirmPassword.sendKeys("abcd@1234");
 			buttonUpdate.click();
 			
-			if(msgSuccess.getText().equals("Success"))
+			System.out.println("Msg : "+msgSuccess.getText());
+			
+			if(msgSuccess.getText().equals("Success!"))
 			{
 				System.out.println("Password changed successfully");
+				
+//				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//				wait.until(ExpectedConditions.invisibilityOf(msgSuccess));
+				result = true;
 			}
 			else
 			{
 				System.out.println("Failed to change password");
 			}
-			
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//		wait.until(ExpectedConditions.invisibilityOf(msgSuccess));
-			
 			ExplicitWait.waitUntilElementInvisibileByEle(driver, msgSuccess);
 		}
 		catch (Exception e)
@@ -85,11 +89,13 @@ public class HeaderPage
 			e.printStackTrace();
 		}
 		
+		return result;
 	}
 	
 	
-	public void logout()
+	public boolean logout()
 	{
+		boolean result = false;                // local variable
 		try
 		{
 			dropdownProfileIcon.click();
@@ -105,6 +111,7 @@ public class HeaderPage
 			if(buttonLogin.isDisplayed())
 			{
 				System.out.println("Logout Successful");
+				result = true;
 			}
 			else
 			{
@@ -116,6 +123,8 @@ public class HeaderPage
 			System.out.println("Exception in method 'logout' : "+e.getMessage());
 			e.printStackTrace();
 		}
+		
+		return result;
 		
 	}
 	
