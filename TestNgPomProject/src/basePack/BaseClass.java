@@ -2,6 +2,8 @@ package basePack;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,6 +25,12 @@ public class BaseClass
 	@BeforeSuite
 	public void initializeDriver() throws IOException
 	{
+		LocalDateTime dateTime = LocalDateTime.now();
+		
+//		ddMMyyhhmmss
+		DateTimeFormatter format  = DateTimeFormatter.ofPattern("ddMMyyhhmmss");
+		String formattedDateTime = "_" +  dateTime.format(format);
+		
 		System.out.println("BeforeSuite");
 		String browserName = PropertyReader.readProperty("Browser");
 		
@@ -42,20 +50,20 @@ public class BaseClass
 		driver.manage().window().maximize(); 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(PropertyReader.readProperty("TestSiteUrl"));
-		ExtentReportHelper extentReportHelper = new ExtentReportHelper();
+		ExtentReportHelper extentReportHelper = new ExtentReportHelper(driver, formattedDateTime);
 	}
 	
 	
 	@BeforeMethod
 	public void login() throws IOException
 	{
-		ExtentReportHelper.startTest();
-		LoginTestScript loginTestScript = new LoginTestScript();
-		loginTestScript.performLogin();
+//		ExtentReportHelper.startTest("");
+//		LoginTestScript loginTestScript = new LoginTestScript();
+//		loginTestScript.performLogin();
 	}
 	
 	@AfterMethod
-	public void logout()
+	public void logout() throws IOException
 	{
 		HeaderTestScript headerTestScript = new HeaderTestScript();
 		headerTestScript.performLogout();

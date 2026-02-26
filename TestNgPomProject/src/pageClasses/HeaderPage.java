@@ -1,11 +1,14 @@
 package pageClasses;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utility.ExplicitWait;
+import utility.ExtentReportHelper;
 
 public class HeaderPage
 {
@@ -55,7 +58,7 @@ public class HeaderPage
 	
 	
 //	public methods
-	public boolean changePassword()
+	public boolean changePassword() throws IOException
 	{
 		boolean result = false;
 		try
@@ -71,21 +74,18 @@ public class HeaderPage
 			
 			if(msgSuccess.getText().equals("Success!"))
 			{
-				System.out.println("Password changed successfully");
-				
-//				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//				wait.until(ExpectedConditions.invisibilityOf(msgSuccess));
+				ExtentReportHelper.logPass("Password changed successfully");
 				result = true;
 			}
 			else
 			{
-				System.out.println("Failed to change password");
+				ExtentReportHelper.logFail("Failed to change password");
 			}
 			ExplicitWait.waitUntilElementInvisibileByEle(driver, msgSuccess);
 		}
 		catch (Exception e)
 		{
-			System.out.println("Exception in method 'changePassword' : "+e.getMessage());
+			ExtentReportHelper.logFail("Exception in method 'changePassword' : "+e.getMessage());
 			e.printStackTrace();
 		}
 		
@@ -93,7 +93,7 @@ public class HeaderPage
 	}
 	
 	
-	public boolean logout()
+	public boolean logout() throws IOException
 	{
 		boolean result = false;                // local variable
 		try
@@ -110,17 +110,17 @@ public class HeaderPage
 			
 			if(buttonLogin.isDisplayed())
 			{
-				System.out.println("Logout Successful");
+				ExtentReportHelper.logPass("Logout Successful");
 				result = true;
 			}
 			else
 			{
-				System.out.println("Logout Failed");
+				ExtentReportHelper.logFail("Logout Failed");
 			}
 		}
 		catch (Exception e)
 		{
-			System.out.println("Exception in method 'logout' : "+e.getMessage());
+			ExtentReportHelper.logFail("Exception in method 'logout' : "+e.getMessage());
 			e.printStackTrace();
 		}
 		

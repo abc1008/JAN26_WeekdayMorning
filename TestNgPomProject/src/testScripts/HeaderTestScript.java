@@ -1,13 +1,16 @@
 package testScripts;
 
+import java.io.IOException;
+
 import basePack.BaseClass;
 import basePack.ObjectHelper;
 import pageClasses.HeaderPage;
+import utility.ExtentReportHelper;
 
 public class HeaderTestScript extends BaseClass
 {
 	
-	public boolean performChangePassword()
+	public boolean performChangePassword() throws IOException
 	{
 		boolean result = false;
 		
@@ -17,17 +20,17 @@ public class HeaderTestScript extends BaseClass
 			
 			if(ObjectHelper.headerPage().changePassword() == true)
 			{
-				System.out.println("Password Changed");
+				ExtentReportHelper.logPass("Password Changed");
 				result = true;
 			}
 			else
 			{
-				System.out.println("Password not changed");
+				ExtentReportHelper.logFail("Password not changed");
 			}
 		}
 		catch (Exception e)
 		{
-			System.out.println("Exception in method 'performChangePassword' : "+e.getMessage());
+			ExtentReportHelper.logFail("Exception in method 'performChangePassword' : "+e.getMessage());
 			e.printStackTrace();
 		}
 		
@@ -35,7 +38,7 @@ public class HeaderTestScript extends BaseClass
 		
 	}
 	
-	public boolean performLogout()
+	public boolean performLogout() throws IOException
 	{
 		boolean result = false;
 		try
@@ -43,17 +46,17 @@ public class HeaderTestScript extends BaseClass
 			HeaderPage headerPage = new HeaderPage(driver);
 			if(headerPage.logout() == true)
 			{
-				System.out.println("User Logged Out");
+				ExtentReportHelper.logPass("User Logged Out");
 				result = true;
 			}
 			else
 			{
-				System.out.println("Failed to Log out");
+				ExtentReportHelper.logFail("Failed to Log out");
 			}
 		}
 		catch (Exception e)
 		{
-			System.out.println("Exception in method 'performLogout' : "+e.getMessage());
+			ExtentReportHelper.logFail("Exception in method 'performLogout' : "+e.getMessage());
 			e.printStackTrace();
 		}
 		

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import basePack.BaseClass;
 import pageClasses.LoginPage;
+import utility.ExtentReportHelper;
 
 public class LoginTestScript extends BaseClass
 {
@@ -19,16 +20,18 @@ public class LoginTestScript extends BaseClass
 			
 			if(loginPage.login() == true)
 			{
-				System.out.println("Login Successful");
+				ExtentReportHelper.logPass("Login Successful");
 			}
 			else
 			{
 				System.out.println("Login Failed");
+				ExtentReportHelper.logFail("Login Failed");
 			}
 		}
-		catch (IOException e)
+		catch (Exception e)
 		{
-			System.out.println("Exception in method performLogin : "+e.getMessage());
+			ExtentReportHelper.logFail("Exception in method 'performLogin' : "+e.getMessage());
+			e.printStackTrace();
 		}
 		
 		return result;

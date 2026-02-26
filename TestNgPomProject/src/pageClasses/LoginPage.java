@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utility.ExplicitWait;
+import utility.ExtentReportHelper;
 import utility.PropertyReader;
 
 public class LoginPage
@@ -64,18 +65,21 @@ public class LoginPage
 			
 			if(dropdownProfileIcon.isDisplayed())
 			{
-				System.out.println("User Logged in Successfully");
+//				System.out.println("User Logged in Successfully");
+				ExtentReportHelper.logPass("User Logged in Successfully");				
 				result = true;
 			}
 			else
 			{
-				System.out.println("Failed to login");
+				ExtentReportHelper.logFail("Failed to login");	
+//				System.out.println("Failed to login");
 			}
 			
 		}
 		catch (IOException e)
 		{
-			System.out.println("Exception in method 'login' : " + e.getMessage());
+//			System.out.println("Exception in method 'login' : " + e.getMessage());
+			ExtentReportHelper.logFail("Exception in method 'login' : " + e.getMessage());	
 		}
 		
 		return result;

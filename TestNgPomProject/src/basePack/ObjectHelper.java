@@ -13,7 +13,7 @@ public class ObjectHelper extends BaseClass
 	{
 		if(_headerPage == null)
 		{
-			_headerPage = new HeaderPage(driver);
+			_headerPage = new HeaderPage(driver); // create object only if its already null
 		}
 		
 		return _headerPage;
