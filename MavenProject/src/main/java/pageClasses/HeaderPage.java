@@ -18,7 +18,7 @@ public class HeaderPage
 	private final String textBoxEnterPasswordXpath = "//input[@placeholder='Enter password']";
 	private final String textBoxConfirmPasswordXpath = "//input[@placeholder='Enter confirm password.']";
 	private final String buttonUpdateXpath = "//button[text()='Update']";
-	private final String msgSuccessXpath = "//span[text()='Success!']";
+	private final String msgSuccessXpath = "//span[text='Success!']";
 	private final String optionLogoutXpath = "//span[text()='Logout']";
 	private final String buttonLoginXpath = "//button[@type='submit']";
 	
